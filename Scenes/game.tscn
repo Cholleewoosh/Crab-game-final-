@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://novxdwhx37wa"]
+[gd_scene load_steps=15 format=3 uid="uid://novxdwhx37wa"]
 
 [ext_resource type="PackedScene" uid="uid://uqkcbr7u0cka" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Texture2D" uid="uid://ck083jjpgkhl4" path="res://Assets/sprites/world_tileset.png" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://bamiptjfowrh7" path="res://Scenes/platform.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://ba4wuqr6vci8s" path="res://Scenes/killzone.tscn" id="4_3dryh"]
+[ext_resource type="PackedScene" uid="uid://b0ky5qoix803g" path="res://Scenes/slime.tscn" id="4_wowpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
 texture = ExtResource("2_qxrlw")
@@ -214,6 +215,44 @@ _data = {
 &"RESET": SubResource("Animation_3dryh")
 }
 
+[sub_resource type="Animation" id="Animation_wowpa"]
+resource_name = "Move 2 electric boogaloo"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(385, 229), Vector2(575, 229)]
+}
+
+[sub_resource type="Animation" id="Animation_i6g32"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(385, 229)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1l0tm"]
+_data = {
+&"Move 2 electric boogaloo": SubResource("Animation_wowpa"),
+&"RESET": SubResource("Animation_i6g32")
+}
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wowpa"]
 
 [node name="Game" type="Node2D"]
@@ -221,7 +260,7 @@ _data = {
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_wrm1d")
 format = 2
-layer_0/tile_data = PackedInt32Array(786445, 0, 0, 786446, 0, 0, 851981, 0, 1, 851982, 0, 1, 917518, 0, 1, 917517, 0, 1, 983053, 0, 1, 983054, 0, 1, 1048590, 0, 1, 1048589, 0, 1, 983052, 0, 1, 1048588, 0, 1, 1048587, 0, 1, 1048586, 0, 1, 983050, 0, 1, 983051, 0, 1, 917516, 0, 0, 917515, 0, 0, 917514, 0, 0, 917519, 393216, 0, 917520, 393216, 0, 917521, 393216, 0, 983056, 393216, 1, 983057, 393216, 1, 1048593, 393216, 1, 1048592, 393216, 1, 1048591, 393216, 1, 983055, 393216, 1, 917522, 589824, 0, 917523, 655360, 0, 917524, 720896, 0, 917525, 393216, 0, 917526, 393216, 0, 983061, 393216, 1, 983062, 393216, 1, 1048598, 393216, 1, 1048597, 393216, 1, 851978, 0, 5, 786442, 0, 4, 720906, 0, 4, 655370, 0, 4, 589834, 0, 4, 524298, 0, 4, 458762, 0, 3)
+layer_0/tile_data = PackedInt32Array(786445, 0, 0, 786446, 0, 0, 851981, 0, 1, 851982, 0, 1, 917518, 0, 1, 917517, 0, 1, 983053, 0, 1, 983054, 0, 1, 1048590, 0, 1, 1048589, 0, 1, 983052, 0, 1, 1048588, 0, 1, 1048587, 0, 1, 1048586, 0, 1, 983050, 0, 1, 983051, 0, 1, 917516, 0, 0, 917515, 0, 0, 917514, 0, 0, 917519, 393216, 0, 917520, 393216, 0, 917521, 393216, 0, 983056, 393216, 1, 983057, 393216, 1, 1048593, 393216, 1, 1048592, 393216, 1, 1048591, 393216, 1, 983055, 393216, 1, 917522, 589824, 0, 917523, 655360, 0, 917524, 720896, 0, 917525, 393216, 0, 917526, 393216, 0, 983061, 393216, 1, 983062, 393216, 1, 1048598, 393216, 1, 1048597, 393216, 1, 851978, 0, 5, 786442, 0, 4, 720906, 0, 4, 655370, 0, 4, 589834, 0, 4, 524298, 0, 4, 458762, 0, 3, 917541, 262144, 0, 983077, 262144, 1, 1048613, 262144, 1, 917542, 262144, 0, 983078, 262144, 1, 1048614, 262144, 1, 589863, 262144, 0, 655399, 262144, 1, 720935, 262144, 1, 786471, 262144, 1, 852007, 262144, 1, 917543, 262144, 1, 983079, 262144, 1, 1048615, 262144, 1, 917544, 262144, 1, 983080, 262144, 1, 1048616, 262144, 1, 917545, 262144, 1, 983081, 262144, 1, 1048617, 262144, 1, 589864, 262144, 0, 655400, 262144, 1, 720936, 262144, 1, 786472, 262144, 1, 852008, 262144, 1, 917546, 262144, 0, 983082, 262144, 1, 1048618, 262144, 1, 852009, 327680, 0, 917547, 262144, 0, 917548, 262144, 0, 917549, 262144, 0, 917550, 262144, 0, 983083, 262144, 1, 1048619, 262144, 1, 1048620, 262144, 1, 1048621, 262144, 1, 983085, 262144, 1, 983084, 262144, 1, 983086, 262144, 1, 1048622, 262144, 1, 917551, 327680, 1, 983087, 262144, 1, 1048623, 262144, 1, 1048624, 262144, 1, 983088, 262144, 1, 917552, 262144, 1, 852015, 327680, 0, 852016, 262144, 1, 786480, 327680, 0, 786481, 262144, 0, 786482, 262144, 0, 786483, 262144, 0, 852017, 262144, 1, 917553, 262144, 1, 983089, 262144, 1, 1048625, 262144, 1, 1048626, 262144, 1, 1048627, 262144, 1, 983091, 262144, 1, 917555, 262144, 1, 917554, 262144, 1, 852018, 262144, 1, 852019, 262144, 1, 983090, 262144, 1)
 
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 position = Vector2(226, 169)
@@ -233,20 +272,37 @@ limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="Platform" parent="." instance=ExtResource("3_wrm1d")]
+[node name="Platforms" type="Node" parent="."]
+
+[node name="Platform" parent="Platforms" instance=ExtResource("3_wrm1d")]
 position = Vector2(225, 151)
 
-[node name="Platform2" parent="." instance=ExtResource("3_wrm1d")]
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_wrm1d")]
 position = Vector2(291, 151)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform2"]
 libraries = {
 &"": SubResource("AnimationLibrary_wowpa")
 }
 autoplay = "Move"
+
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_wrm1d")]
+position = Vector2(385, 229)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/Platform3"]
+libraries = {
+&"": SubResource("AnimationLibrary_1l0tm")
+}
+autoplay = "Move 2 electric boogaloo"
+
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_wrm1d")]
+position = Vector2(607, 187)
 
 [node name="Killzone" parent="." instance=ExtResource("4_3dryh")]
 position = Vector2(250, 297)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_wowpa")
+
+[node name="Slime" parent="." instance=ExtResource("4_wowpa")]
+position = Vector2(680, 224)
