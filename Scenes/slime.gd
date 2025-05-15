@@ -9,6 +9,7 @@ var direction = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector_right: RayCast2D = $"Player detector right"
 @onready var player_detector_left: RayCast2D = $"Player detector left"
+@onready var timer: Timer = $Timer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -21,14 +22,18 @@ func _process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	
 	if player_detector_right.is_colliding():
-		direction = 1
 		animated_sprite_2d.flip_h = false
-		SPEED *= 1.5
+		await get_tree().create_timer(0.5).timeout
+		direction = 1
+		
+		position.x += 2 * direction * SPEED * delta
 		
 	if player_detector_left.is_colliding():
-		direction = -1
 		animated_sprite_2d.flip_h = true
-		SPEED *= 1.5
+		await get_tree().create_timer(0.5).timeout
+		direction = -1
+		
+		position.x += 2 * direction * SPEED * delta
 
 		
 	position.x += direction * SPEED * delta
