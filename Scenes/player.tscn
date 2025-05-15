@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://uqkcbr7u0cka"]
+[gd_scene load_steps=7 format=3 uid="uid://uqkcbr7u0cka"]
 
-[ext_resource type="Script" uid="uid://b7bgaosvp1ove" path="res://Scenes/player.gd" id="1_6t5aa"]
+[ext_resource type="Script" uid="uid://b7bgaosvp1ove" path="res://Scripts/player.gd" id="1_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://btul4el22n18u" path="res://Assets/Crabby.png" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://drt8kci7uoffg" path="res://Assets/Crabby but not.png" id="2_6t5aa"]
 
@@ -21,6 +21,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fkybt"]
 radius = 11.1803
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6t5aa"]
+radius = 12.0
+height = 32.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 5
 collision_layer = 2
@@ -37,3 +41,13 @@ frame_progress = 0.227899
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_fkybt")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="HurtboxCollisionShape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("CapsuleShape2D_6t5aa")
+debug_color = Color(0.956333, 1.63645e-06, 0.538487, 0.42)
+
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
