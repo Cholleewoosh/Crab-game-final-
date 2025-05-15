@@ -1,11 +1,25 @@
 extends Node
 
+var max_health : int = 2
+var current_health : int
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	current_health = max_health
+	
+func decrease_health(health_amount : int):
+	current_health -= health_amount
+	
+	if current_health < 0:
+		current_health = 0
+		get_tree().reload_current_scene()
+		current_health = max_health
+	
+	print("decrease health")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func increase_health(health_amount : int):
+	current_health += health_amount
+	
+	if current_health > max_health:
+		current_health = max_health
+	print("increase health")
+	

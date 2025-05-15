@@ -9,6 +9,8 @@ var SPEED = 60
 
 var direction = 1
 
+@export var damage_amount : int = 1
+
 @onready var wall_raycast_right: RayCast2D = $\"Wall Raycast right\"
 @onready var wall_raycast_left: RayCast2D = $\"Wall Raycast left\"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
