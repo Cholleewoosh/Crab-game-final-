@@ -9,7 +9,6 @@ var direction = 1
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector_right: RayCast2D = $"Player detector right"
 @onready var player_detector_left: RayCast2D = $"Player detector left"
-@onready var timer: Timer = $Timer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
