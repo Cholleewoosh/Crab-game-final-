@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ck083jjpgkhl4" path="res://Assets/sprites/world_tileset.png" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://bamiptjfowrh7" path="res://Scenes/platform.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://ba4wuqr6vci8s" path="res://Scenes/killzone.tscn" id="4_3dryh"]
-[ext_resource type="PackedScene" uid="uid://b0ky5qoix803g" path="res://Scenes/slime.tscn" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://cvoo0mwonha44" path="res://Scenes/slime_3.tscn" id="6_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cl4bmdurnfsnu" path="res://Scenes/slime_2.tscn" id="6_i6g32"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxrlw"]
@@ -305,11 +305,11 @@ position = Vector2(250, 297)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_wowpa")
 
-[node name="Slime" parent="." instance=ExtResource("4_wowpa")]
-position = Vector2(680, 224)
-
-[node name="Slime2" parent="." instance=ExtResource("4_wowpa")]
-position = Vector2(-259, 127)
-
 [node name="Slime 2" parent="." instance=ExtResource("6_i6g32")]
 position = Vector2(-249, 228)
+
+[node name="Slime 3" parent="." instance=ExtResource("6_i6g32")]
+position = Vector2(706, 48)
+
+[node name="Slime_3" parent="." instance=ExtResource("6_1l0tm")]
+position = Vector2(352, 224)

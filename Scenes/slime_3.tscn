@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cvoo0mwonha44"]
+
+[ext_resource type="Texture2D" uid="uid://c32vd5m08drsp" path="res://Assets/sprites/slime_green.png" id="1_igbs3"]
+[ext_resource type="Script" uid="uid://k01fbvrunjxu" path="res://Scenes/slime_3.gd" id="1_xgtjm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgtjm"]
+atlas = ExtResource("1_igbs3")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4y0tr"]
+atlas = ExtResource("1_igbs3")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioql1"]
+atlas = ExtResource("1_igbs3")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2c3b"]
+atlas = ExtResource("1_igbs3")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktayy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgtjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4y0tr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ioql1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2c3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1pu7"]
+size = Vector2(10, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8xuen"]
+radius = 27.0
+
+[node name="Slime_3" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+script = ExtResource("1_xgtjm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_ktayy")
+autoplay = "default"
+frame_progress = 0.167832
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_r1pu7")
+
+[node name="Hurtbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_8xuen")
+debug_color = Color(0.684752, 0.496301, 0.19413, 0.42)
