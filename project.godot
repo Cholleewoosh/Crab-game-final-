@@ -22,6 +22,7 @@ HealthManager="*res://Scripts/health_manager.gd"
 [global_group]
 
 Enemy=""
+Player=""
 
 [input]
 
