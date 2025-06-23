@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drt8kci7uoffg"
-path="res://.godot/imported/Crabby but not.png-c241e2c479864215a681b1084784c63c.ctex"
+uid="uid://btul4el22n18u"
+path="res://.godot/imported/Crabby.png-6b5709aa6a33e29b17cbbb8321dfe2b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Crabby but not.png"
-dest_files=["res://.godot/imported/Crabby but not.png-c241e2c479864215a681b1084784c63c.ctex"]
+source_file="res://Assets/sprites/Crabby.png"
+dest_files=["res://.godot/imported/Crabby.png-6b5709aa6a33e29b17cbbb8321dfe2b1.ctex"]
 
 [params]
 
