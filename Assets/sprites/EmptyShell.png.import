@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qwxci075sntd"
-path="res://.godot/imported/Full shell asset.png-8f7c2055c2058975f58b6390b69d0736.ctex"
+uid="uid://cpra2sjadp0po"
+path="res://.godot/imported/EmptyShell.png-5bca4e4d23a5490e37affdf0b8ad7fa2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/Full shell asset.png"
-dest_files=["res://.godot/imported/Full shell asset.png-8f7c2055c2058975f58b6390b69d0736.ctex"]
+source_file="res://Assets/sprites/EmptyShell.png"
+dest_files=["res://.godot/imported/EmptyShell.png-5bca4e4d23a5490e37affdf0b8ad7fa2.ctex"]
 
 [params]
 
