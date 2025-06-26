@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d38t7t5dvlvco"]
+
+[ext_resource type="Script" uid="uid://crril8g7s4tcl" path="res://shell_pickup.gd" id="1_b6r04"]
+[ext_resource type="Texture2D" uid="uid://qwxci075sntd" path="res://Assets/sprites/FullShell.png" id="2_1hw14"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dfexj"]
+radius = 6.0
+
+[node name="ShellPickup" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_b6r04")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1hw14")
+
+[node name="Shell_pick_up_box" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shell_pick_up_box"]
+position = Vector2(0.5, 0.75)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_dfexj")
+
+[connection signal="body_entered" from="Shell_pick_up_box" to="." method="_on_shell_pick_up_box_body_entered"]

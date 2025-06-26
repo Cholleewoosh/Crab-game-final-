@@ -95,7 +95,7 @@ animations = [{
 size = Vector2(10, 12)
 
 [node name="Slime 2" type="CharacterBody2D" groups=["Enemy"]]
-collision_layer = 2
+collision_layer = 4
 script = SubResource("GDScript_hmfek")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -106,22 +106,22 @@ autoplay = "default"
 [node name="Wall Raycast right" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(8, 0)
-collision_mask = 3
+collision_mask = 5
 
 [node name="Wall Raycast left" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(-8, 0)
-collision_mask = 3
+collision_mask = 5
 
 [node name="Player detector right" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(85, 0)
-collision_mask = 4
+collision_mask = 2
 
 [node name="Player detector left" type="RayCast2D" parent="."]
 position = Vector2(0, -8)
 target_position = Vector2(-85, 0)
-collision_mask = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
