@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
+@onready var camera = $Camera2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,4 +30,6 @@ func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		print("Owie", body.damage_amount)
 		HealthManager.decrease_health(body.damage_amount)
-		
+
+func Player():
+	pass
