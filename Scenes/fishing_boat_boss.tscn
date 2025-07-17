@@ -1,11 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckifxh8g412oo"]
+[gd_scene load_steps=9 format=3 uid="uid://ckifxh8g412oo"]
 
 [ext_resource type="Texture2D" uid="uid://bw4hiljivvioc" path="res://Assets/sprites/Fishing Boat frame 1.png" id="1_i4bwb"]
 [ext_resource type="Script" uid="uid://b3nb6v0bjx0yk" path="res://Scenes/fishing_boat_boss.gd" id="1_pvodh"]
 [ext_resource type="Texture2D" uid="uid://b6bkxxln8rhe6" path="res://Assets/sprites/Fishing Boat frame 2.png" id="2_pvodh"]
+[ext_resource type="Texture2D" uid="uid://bcdvgxxn0k2y3" path="res://Assets/sprites/Fishing boat broken.png" id="2_vr2fu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vr2fu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vr2fu")
+}],
+"loop": true,
+"name": &"Sinking",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_i4bwb")
@@ -35,8 +44,8 @@ script = ExtResource("1_pvodh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vr2fu")
+animation = &"Sinking"
 autoplay = "default"
-frame_progress = 0.419564
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 101.5)
@@ -57,6 +66,7 @@ curve = SubResource("Curve2D_pvodh")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-1092, 679)
 rotation = -0.556291
+loop = false
 
 [node name="Cutscene_Camera" type="Camera2D" parent="Path2D/PathFollow2D"]
 enabled = false

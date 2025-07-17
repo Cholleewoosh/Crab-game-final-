@@ -1,7 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvoo0mwonha44"]
+[gd_scene load_steps=11 format=3 uid="uid://cvoo0mwonha44"]
 
 [ext_resource type="Texture2D" uid="uid://c32vd5m08drsp" path="res://Assets/sprites/slime_green.png" id="1_igbs3"]
 [ext_resource type="Script" uid="uid://k01fbvrunjxu" path="res://Scripts/slime_3.gd" id="1_xgtjm"]
+[ext_resource type="Texture2D" uid="uid://skw2i4vfk3m7" path="res://Assets/sprites/Red-Circle-Transparent.png" id="2_4y0tr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ioql1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4y0tr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgtjm"]
 atlas = ExtResource("1_igbs3")
@@ -44,7 +56,13 @@ radius = 33.0
 
 [node name="Slime_3" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_xgtjm")
+
+[node name="Hurtbox_Indicator" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(0.129, 0.129)
+sprite_frames = SubResource("SpriteFrames_ioql1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
