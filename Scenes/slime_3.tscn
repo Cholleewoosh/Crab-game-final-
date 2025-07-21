@@ -65,6 +65,7 @@ scale = Vector2(0.129, 0.129)
 sprite_frames = SubResource("SpriteFrames_ioql1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ktayy")
 autoplay = "default"
