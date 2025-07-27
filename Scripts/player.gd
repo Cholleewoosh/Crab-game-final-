@@ -1,22 +1,21 @@
 extends CharacterBody2D
 
-
+# Control speed and jump height
 const SPEED = 150.0
 const JUMP_VELOCITY = -300.0
 
 @onready var camera = $Camera2D
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Adds the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	# Makes the player jump when the spacebar is pressed
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Makes the player move left and right when the respective buttons are pressed
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -25,11 +24,8 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
+# Tells the health manager to remove a life when colliding with an enemy
 func _on_hurtbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy"):
 		print("Owie", body.damage_amount)
 		HealthManager.decrease_health(body.damage_amount)
-
-func Player():
-	pass

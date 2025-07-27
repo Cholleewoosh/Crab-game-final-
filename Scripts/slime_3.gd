@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 var spines_out = true
 
+# Controls the damage emitted when colliding with player
 @export var damage_amount : int = 1
+
 @onready var hurtbox: CollisionShape2D = $Hurtbox
 @onready var hurtbox_indicator: AnimatedSprite2D = $Hurtbox_Indicator
 
+# The loop that makes the enemy's hurtbox turn on and off
 func _ready() -> void:
 	while spines_out == true:
 		hurtbox.disabled = false

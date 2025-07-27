@@ -5,6 +5,7 @@ var checkpoint_manager
 func _ready() -> void:
 	checkpoint_manager = get_parent().get_parent().get_node("Checkpoint_Manager")
 
+# Sets the players spawn when touched
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Checkpoint")
