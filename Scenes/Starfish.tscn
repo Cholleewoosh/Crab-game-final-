@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cl4bmdurnfsnu"]
 
-[ext_resource type="Script" uid="uid://drdauqadki4mo" path="res://Scripts/slime_2.gd" id="1_hmfek"]
+[ext_resource type="Script" uid="uid://drdauqadki4mo" path="res://Scripts/Starfish.gd" id="1_hmfek"]
 [ext_resource type="Texture2D" uid="uid://dxl313ndp7rx8" path="res://Assets/sprites/slime_purple.png" id="1_ljwhv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cr6pp"]

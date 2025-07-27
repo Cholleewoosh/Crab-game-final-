@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://cvoo0mwonha44"]
 
 [ext_resource type="Texture2D" uid="uid://c32vd5m08drsp" path="res://Assets/sprites/slime_green.png" id="1_igbs3"]
-[ext_resource type="Script" uid="uid://k01fbvrunjxu" path="res://Scripts/slime_3.gd" id="1_xgtjm"]
+[ext_resource type="Script" uid="uid://k01fbvrunjxu" path="res://Scripts/Sea_Urchin.gd" id="1_xgtjm"]
 [ext_resource type="Texture2D" uid="uid://skw2i4vfk3m7" path="res://Assets/sprites/Red-Circle-Transparent.png" id="2_4y0tr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ioql1"]

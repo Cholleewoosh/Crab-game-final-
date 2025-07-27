@@ -1,3 +1,4 @@
+# My test enemy, does everything that the Starfish does, but does no damage, just kills the player
 extends Node2D
 
 var SPEED = 60
@@ -10,7 +11,7 @@ var direction = 1
 @onready var player_detector_right: RayCast2D = $"Player detector right"
 @onready var player_detector_left: RayCast2D = $"Player detector left"
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if wall_raycast_right.is_colliding():
 		direction = -1

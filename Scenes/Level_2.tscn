@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://vp6ilrss1o4u" path="res://Scenes/Checkpoint.tscn" id="6_cleky"]
 [ext_resource type="PackedScene" uid="uid://ckifxh8g412oo" path="res://Scenes/fishing_boat_boss.tscn" id="7_cleky"]
 [ext_resource type="PackedScene" uid="uid://bamiptjfowrh7" path="res://Scenes/platform.tscn" id="8_001cu"]
-[ext_resource type="PackedScene" uid="uid://cvoo0mwonha44" path="res://Scenes/slime_3.tscn" id="9_5ufib"]
-[ext_resource type="PackedScene" uid="uid://cl4bmdurnfsnu" path="res://Scenes/slime_2.tscn" id="10_diio2"]
+[ext_resource type="PackedScene" uid="uid://cvoo0mwonha44" path="res://Scenes/Sea_Urchin.tscn" id="9_5ufib"]
+[ext_resource type="PackedScene" uid="uid://cl4bmdurnfsnu" path="res://Scenes/Starfish.tscn" id="10_diio2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rpid8"]
 texture = ExtResource("1_apq5t")
